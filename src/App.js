@@ -13,6 +13,10 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
+		let addBook = products.filter( product => {
+			return product.id === item.id
+		})
+		setCart(cart.concat(addBook))
 	};
 
 	return (
