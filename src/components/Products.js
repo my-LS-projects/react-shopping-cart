@@ -16,7 +16,7 @@ const Products = () => {
 					product={product}
 					addItem={addItem}
 				/>
-			))}
+				))}
 		</div>
 	);
 };

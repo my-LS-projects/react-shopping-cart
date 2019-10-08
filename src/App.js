@@ -23,16 +23,20 @@ function App() {
 		setCart(cart.concat(addBook))
 	};
 
+	const removeItem = book => {
+		setCart(cart.filter((item) => item.id !== book.id ))
+	}
+
 	return (
-		<div className="App">
-			<ProductContext.Provider value={{products, addItem}}>
+			<div className="App">
+			<ProductContext.Provider value={{products, addItem, removeItem}}>
 				<CartContext.Provider value={cart}>
 					<Navigation />
 					{/* Routes */}				
 						<Route
 							exact
 							path="/"
-							component={Products} />			
+							component={Products} />
 						<Route
 							path="/cart"
 							component={ShoppingCart} />
